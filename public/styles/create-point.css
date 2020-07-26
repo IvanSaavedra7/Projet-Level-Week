@@ -1,0 +1,187 @@
+#page-create-point{
+
+    width: 90%;
+    max-width: 1100px;
+    /*ALIGAMENTO DAS COISAS FORA DA CAIXA*/
+    margin: 0 auto;  
+}
+
+#page-create-point header{
+
+    margin-top: 48px;
+    /*a abixo esses comando deixa os itens espalhos n laterias */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+#page-create-point header a{
+
+     /*a cor é pega na variavel declarada em home */
+    color: var(--title-color);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    
+}
+
+#page-create-point header a span{
+
+    margin-right: 20px;
+    background-image: url('../assets/arrow-left.svg');
+    display: flex;
+    /*colocamos width e hiegt para a imagem aparecer*/
+    width: 20px;
+    height: 20px;
+    
+}
+
+form{
+
+    background-color: white;
+    margin: 80px auto;
+    margin-top: 80px;
+    /*PREENCHIMENTO DO FORMULARIO*/
+    padding: 65px;
+    border-radius: 10px;
+    /*o MAX DEFINIRA UM LIMITE PARA A CAIXA CRESCER
+    PARA ELA NAO FICA TAO LARGA*/
+    max-width: 730px;
+    
+
+}
+
+form h1{
+    font-size: 35px;
+}
+
+form fieldset{
+    margin-top: 64px;
+    border: 0; /*esta tiranodo o rasado do lado*/
+}
+
+form legend{
+    margin-bottom: 40px;
+    /* o que eu escrevi abaixo foi todo o necessario para deixar 2 elemntso na msm linha e espa;os dos lados */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+form legend h2{
+    font-size: 35px;
+}
+
+form legend spam{
+    color: var(--title-color);
+}
+
+form .field{
+     display: flex; /* COLOCA UM ELEMENTO AO LADO DO OUTRO NO FORM*/
+    flex-direction: column; /* DEPOIS DO FLEX ELE COLOCA TODOS E FORMA DE COLUNA */
+    flex: 1; /*ESTICA OS ELEMENTOS ATE PREENCHER TODO O ESPAÇO DA FLEX*/
+    margin-bottom: 24px;
+}
+
+form .field-group{
+    display: flex;
+}
+
+form input, form select{
+    background-color: rgb(239, 234, 241);
+    border: 0; /* tira as borda dos lados*/
+    padding: 16px 24px; /* REDMENSIONA OS LADO*/
+    outline-color:#34cb79 ; /*COLOCA COR NAS BORDA QUANDO SELESIONADO*/
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bolder;
+    color: #3b3d3c;
+}
+
+form label{
+    font-size: 15px;
+    margin-bottom: 12px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+form .field-group .field+.field{
+    margin-left: 20px;
+}
+
+form select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+form button{
+    width: 260px;
+    height: 56px;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+    border: 0;
+    margin-top: 30px;
+    transition: background-color 400ms;
+}
+
+form button:hover{
+    background-color: #2fb86e;
+}
+
+.itens-grid{
+    display: grid; /*grid faz com que eu organize a area do jeito q eu quiser*/
+    grid-template-columns: 1fr 1fr 1fr; /*organiza em 3 colunas*/
+    gap: 16px; /*o grip deixa eu colocar um avastamento dos elementos sem precissar de margin-top e tals*/
+}
+
+.itens-grid li{
+    background-color: #e1e7de;
+    list-style: none;
+    border: 2px solid #e1e7de;
+    border-radius: 8px;
+
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: Space-between; /* o space between coloca os elemento em cada canro do espaço q ele tem*/
+
+    height: 150px;
+    padding: 32px 24px 16px;
+
+    text-align: center;
+    cursor: pointer; /* muda a maozinha do mouse*/
+    transition: 450ms;
+}
+
+.itens-grid li:hover{
+    background-color: #bee6ac;
+}
+
+
+.itens-grid li span{
+
+    margin-top: 10px;
+    flex: 1;
+    display: flex; 
+    align-items: center;
+    color: var(--title-color);
+}
+
+.itens-grid li.select{
+
+    background-color: #a0ec7c;
+    border: 3px solid #1ee238;
+}
+
+.itens-grid li img,
+.itens-grid li span{
+    /*o pointer abaixo serve para esse elemtno da imagem
+    e texto nao acionem evento quando clikados, para nao dar problema no metodo q 
+    seleciona caixa*/
+    pointer-events: none;
+}

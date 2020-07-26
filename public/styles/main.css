@@ -1,0 +1,48 @@
+
+:root{
+    --title-color:#322153;
+    --primary-color:#34cb79;
+    --segunda-cor:#f0f0f5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    /*VAI FAZER TODO CAIXA DA TELA N TER REDIMENSIONA PELO SEU CONTEUDO
+    MAS PELO SEU TAMANHO EM SI*/
+    box-sizing: content-box;
+}
+
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    background: #f0f0f5;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 , h2 , h3 ,h4 ,h4 , h5 ,h6 ,h7{
+    color: var(--title-color);
+    font-family: 'Ubuntu', sans-serif;
+}
+
+/* BOX MODEL */
+
+#page-home{
+    height: 100vh;
+    background: url('../assets/home-background.svg') no-repeat ;
+    background-position: 35vw bottom;
+}
+
+
+
+
+
+
+/* CLASS */
+

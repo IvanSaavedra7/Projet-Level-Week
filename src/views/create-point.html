@@ -1,0 +1,143 @@
+{% extends "layout.html" %}
+
+{% set pageId = "page-create-point" %}
+
+<!-- a baixo temos o link do google fontes onde pegasmo o endereço a mesma pra colocar no html e seu codigo do css-->
+
+{% block title %}
+    <title>Criar um ponto de Coleta</title>
+{% endblock title %}
+
+{% block styles %}
+
+    <link rel="stylesheet" href="/styles/create-point.css">
+    <link rel="stylesheet" href="/styles/modal.css">
+
+
+{% endblock styles %}
+
+{% block content %}
+    {% include "partials/page-header.html" %}
+
+    <form action="/savepoint" method="POST">
+        <!-- esse é o começo do formulario-->
+
+        <h1>Cadastro Ponto de Coleta</h1>
+        <!--Titulo formulario-->
+
+        <fieldset>
+            <!-- 1 parte do formulario-->
+
+            <legend>
+                <!-- legend é pra colocar o subTitulo-->
+                <h2>Dados da Entidade</h2>
+            </legend>
+
+            <div class="field-group">
+                <div class="field">
+                    <!-- nos DIV colocamos os campos do formulario que s tera um elbal para o tutulo e um input que o local pra digitar-->
+                    <label for="name">Nome da entidade</label>
+                    <input type="text" name="name" required="required">
+                </div>
+
+                <div class="field">
+                    <label for="image">Imagem da Entidade</label>
+                    <input type="url" name="image" placeholder="httpp://" required="required">
+                </div>
+
+            </div>
+
+            <div class="field-group">
+                <!-- esse field tera 2 campos de preenchimentos agrupado um do lado do utro-->
+                <div class="field">
+                    <label for="address">Endereço</label>
+                    <input type="text" name="address" required="required"><!--required deixaram obrigatoriopreencher o nome--></div>
+                <div class="field">
+                    <label for="address2">Numero/Complemeto</label>
+                    <input type="text" name="address2" required="required">
+                </div>
+            </div>
+
+            <div class="field-group">
+                <!-- esse field tera 2 campos de preenchimentos agrupado um do lado do utro-->
+                <div class="field">
+                    <label for="state">Estado</label>
+                    <select name="uf" required="required">
+                        <option value="">Selecione o Estado...</option>
+                    </select>
+                    <input type="hidden" name="state">
+                </div>
+                <div class="field">
+                    <label for="citys">Cidade</label>
+                    <select name="city" disabled="disabled" required="required">
+                        <option value="">Selecione a Cidade</option>
+                    </select>
+                </div>
+
+            </div>
+
+        </fieldset>
+
+        <fieldset>
+
+            <legend>
+                <h2>Ítens de Coleta</h2>
+                <span>Selecione um ou mais itens abaixo</span>
+            </legend>
+
+            <div class="itens-grid">
+                <li data-id="lâmpadas">
+                    <!-- A tag "li é para listas" , e o Data é pra coloca auqleur identificar na frente-->
+                    <img src="/assets/lampadas.svg" alt="lâmpadas">
+                    <!-- alt é a segunda opção se n for uma imagem-->
+                    <span>lâmpadas</span>
+                </li>
+
+                <li data-id="Pilhas e Baterias">
+                    <img src="/assets/baterias.svg" alt="Pilhas e Baterias">
+                    <span>Pilhas e Baterias</span>
+                </li>
+
+                <li data-id="Papéis e Papelão">
+                    <img src="/assets/papeis-papelao.svg" alt="Papeis e Papelão">
+                    <span>Papéis e Papelão</span>
+                </li>
+
+                <li data-id="Residuos Eletrônicos">
+                    <img src="/assets/eletronicos.svg" alt="lâmpadas">
+                    <span>Residuos Eletrônicos</span>
+                </li>
+
+                <li data-id="Residuos Orgânicos">
+                    <img src="/assets/organicos.svg" alt="lâmpadas">
+                    <span>Residuos Orgânicos</span>
+                </li>
+
+                <li data-id="Óleo de cozinha">
+                    <img src="/assets/oleo.svg" alt="lâmpadas">
+                    <span>Óleo de cozinha</span>
+                </li>
+            </div>
+
+            <input type="hidden" name="items">
+            <!--botao oculto para enviar os itens selecionador-->
+
+        </fieldset>
+
+        <button type="submit">Cadastra Ponto de Coleta</button>
+
+    </form>
+
+
+
+{% endblock content %}
+
+{% block modal %}
+    {% if saved %}
+      {%include "partials/point-created.html"%}
+    {% endif %}
+{% endblock modal %}
+
+{% block script %}
+    <script src="/scripts/create-point.js"></script>
+{% endblock script %}

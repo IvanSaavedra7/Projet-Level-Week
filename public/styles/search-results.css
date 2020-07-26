@@ -1,0 +1,109 @@
+body{
+    background-color: white;
+}
+
+#page-search-results{
+    width: 90%;
+    max-width: 1100px;
+    /*ALIGAMENTO DAS COISAS FORA DA CAIXA*/
+    margin: 0 auto;  
+}
+
+#page-search-results header{
+
+    margin-top: 48px;
+    /*a abixo esses comando deixa os itens espalhos n laterias */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+#page-search-results header a{
+
+     /*a cor é pega na variavel declarada em home */
+    color: var(--title-color);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    
+}
+
+#page-search-results header a span{
+
+    margin-right: 20px;
+    background-image: url('../assets/arrow-left.svg');
+    display: flex;
+    /*colocamos width e hiegt para a imagem aparecer*/
+    width: 20px;
+    height: 20px;
+    
+}
+
+main {
+    margin: 48px;
+}
+
+main h4{
+    font-weight:  normal;
+    font-family: Roboto, sans-serif;
+
+    margin-bottom: 32px;
+
+}
+
+main .cards{
+    display: grid;
+    grid-template-columns:  1fr 1fr 1fr;
+    gap: 24px
+}
+
+
+main .card img{
+    width: 100%;
+    height: 250px;
+    border-radius: 8px 8px 0 0 ;
+    object-fit: cover; /* vai preenchertodo o espaço com a imagem */
+
+}
+
+main .card h1{
+
+    margin-top: 32px;
+    font-size: 26px;
+    line-height: 41px;
+    margin-top: 32px;
+    color:  #322153;
+}
+
+main .card h3{
+
+    margin-top: 20px;
+    font-family: Roboto;
+    margin-bottom:20px ;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 34px;
+
+    color: var(--primary-color);
+}
+
+main .card p{
+
+    font-size: 16px;
+    line-height: 26px;
+
+    color: #6C6C80;
+}
+
+body::after{
+    content: "";
+    position: absolute;
+    background-color: #f0f0f5;
+    top:0;
+    right: 0;
+    left: 0;
+    height: 16rem;
+    bottom: 0;
+     z-index: -1;/* esse z é meche na terceira dimensão do html ou sej esta colocando ele esse alemento para o fundo */
+}
